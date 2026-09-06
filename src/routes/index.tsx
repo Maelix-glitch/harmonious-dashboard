@@ -277,7 +277,7 @@ function SectionHead({
   action?: React.ReactNode;
 }) {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4 sm:flex sm:items-center sm:justify-between">
+    <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
       <div className="flex min-w-0 items-start gap-3.5">
         <Icon className="mt-1 h-5 w-5 shrink-0 text-gold" strokeWidth={1.5} />
         <div className="min-w-0">
