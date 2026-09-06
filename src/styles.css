@@ -132,6 +132,90 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+/* ---------------------------------------------------------------
+ * Bloom — calm, premium, low-light botanical design system
+ * --------------------------------------------------------------- */
+
+:root {
+  --radius: 1.25rem;
+
+  --background: oklch(0.155 0.014 160);
+  --foreground: oklch(0.955 0.008 90);
+
+  --card: oklch(0.196 0.015 162);
+  --card-foreground: oklch(0.955 0.008 90);
+  --popover: oklch(0.196 0.015 162);
+  --popover-foreground: oklch(0.955 0.008 90);
+
+  --surface: oklch(0.213 0.016 162);
+  --surface-foreground: oklch(0.955 0.008 90);
+
+  --primary: oklch(0.855 0.086 82);
+  --primary-foreground: oklch(0.19 0.02 150);
+
+  --secondary: oklch(0.238 0.018 162);
+  --secondary-foreground: oklch(0.93 0.01 90);
+
+  --muted: oklch(0.235 0.015 162);
+  --muted-foreground: oklch(0.735 0.017 120);
+
+  --accent: oklch(0.79 0.09 78);
+  --accent-foreground: oklch(0.19 0.02 150);
+
+  --gold: oklch(0.855 0.086 82);
+  --gold-soft: oklch(0.9 0.05 88);
+
+  --destructive: oklch(0.62 0.15 25);
+  --destructive-foreground: oklch(0.97 0.01 90);
+
+  --border: oklch(0.985 0.01 120 / 9%);
+  --input: oklch(0.985 0.01 120 / 12%);
+  --ring: oklch(0.855 0.086 82 / 50%);
+
+  --mood-happy: oklch(0.86 0.1 85);
+  --mood-calm: oklch(0.76 0.06 145);
+  --mood-neutral: oklch(0.62 0.01 160);
+  --mood-sad: oklch(0.72 0.06 250);
+  --mood-anxious: oklch(0.71 0.08 30);
+  --mood-angry: oklch(0.64 0.12 25);
+
+  --sidebar: oklch(0.145 0.014 162);
+  --sidebar-foreground: oklch(0.94 0.008 90);
+  --sidebar-primary: oklch(0.855 0.086 82);
+  --sidebar-primary-foreground: oklch(0.19 0.02 150);
+  --sidebar-accent: oklch(0.235 0.016 162);
+  --sidebar-accent-foreground: oklch(0.955 0.008 90);
+  --sidebar-border: oklch(0.985 0.01 120 / 9%);
+  --sidebar-ring: oklch(0.855 0.086 82 / 40%);
+
+  --shadow-soft: 0 24px 60px -30px oklch(0 0 0 / 0.75);
+  --shadow-glow: 0 0 40px -6px oklch(0.855 0.086 82 / 0.35);
+  --gradient-veil: linear-gradient(
+    180deg,
+    oklch(0.155 0.014 160 / 0) 0%,
+    oklch(0.155 0.014 160 / 0.55) 55%,
+    oklch(0.155 0.014 160 / 0.96) 100%
+  );
+  --gradient-gold: linear-gradient(135deg, oklch(0.9 0.06 90), oklch(0.82 0.1 78));
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-mood-happy: var(--mood-happy);
+  --color-mood-calm: var(--mood-calm);
+  --color-mood-neutral: var(--mood-neutral);
+  --color-mood-sad: var(--mood-sad);
+  --color-mood-anxious: var(--mood-anxious);
+  --color-mood-angry: var(--mood-angry);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --shadow-soft: var(--shadow-soft);
+  --shadow-glow: var(--shadow-glow);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -140,5 +224,30 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
 }
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility panel {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility veil {
+  background-image: var(--gradient-veil);
+}
+
